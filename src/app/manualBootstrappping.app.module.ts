@@ -1,3 +1,5 @@
+/* File is for demo purpose to showcase how to do mannual bootstapping in NG-2 */
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
