@@ -1,3 +1,5 @@
+/* This file is used to showcase how to do the mannual bootstraping in ng-2*/
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
