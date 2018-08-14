@@ -1,3 +1,39 @@
-<p>
-  user-registration works!
-</p>
+<div>
+	<h2>User Registration Form </h2>
+		<form [formGroup]="userRegistrn" (ngSubmit)="onUserSubmit(userRegistrn)">
+
+		<label>
+		First Name:
+		<input type="text" formControlName="fName">
+		</label>
+
+		<label>
+		Last Name:
+		<input type="text" formControlName="lName">
+		</label>
+		<div formGroupName="address">
+		<h3>Address</h3>
+
+		<label>
+		Street:
+		<input type="text" formControlName="street">
+		</label>
+
+		<label>
+		City:
+		<input type="text" formControlName="city">
+		</label>
+
+		<label>
+		State:
+		<input type="text" formControlName="state">
+		</label>
+
+		<label>
+		Zip Code:
+		<input type="text" formControlName="zip">
+		</label>
+		</div>
+		<button type="submit" [disabled]="userRegistrn.invalid">Submit</button>
+		</form>
+</div>

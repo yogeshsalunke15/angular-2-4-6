@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
@@ -10,9 +11,20 @@ import { UserRegistrationComponent } from './user-registration/user-registration
     UserRegistrationComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  //bootstrap: [AppComponent] 
+  entryComponents: [UserRegistrationComponent]
+
 })
-export class AppModule { }
+export class AppModule { 
+
+	ngDoBootstrap(app){
+ 		
+ 		let element = document.createElement('app-user-registration');
+ 		document.body.appendChild(element);
+ 		app.bootstrap(UserRegistrationComponent);
+	}
+}
