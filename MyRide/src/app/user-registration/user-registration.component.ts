@@ -36,39 +36,28 @@ export class UserRegistrationComponent implements OnInit {
       });
   }
   
-  ngOnChanges() {
-    console.log(` Parent ngOnChanges - Called`);
-  }
-
-  
-  ngDoCheck() {
-    console.log(" Parent ngDoCheck Called")
-  }
-
-  
-  ngAfterContentInit() {
-    console.log(" Parent ngAfterContentInit Called");
-  }
-
-  
-  ngAfterContentChecked() {
-    console.log("Parent ngAfterContentChecked Called");
-  }
-
-  
-  ngAfterViewInit() {
-    console.log("Parent ngAfterViewInit Called");
-  }
-
-
-  ngAfterViewChecked() {
-    console.log("Parent ngAfterViewChecked  Called ");
-  }
-
-  ngOnDestroy() {
-    console.log(" Parent ngOnDestroy  Called");
-    //alert("Destroying Component");
-  }
+  // ngOnChanges() {
+  //   console.log(` Parent ngOnChanges - Called`);
+  // }
+  // ngDoCheck() {
+  //   console.log(" Parent ngDoCheck Called")
+  // }
+  // ngAfterContentInit() {
+  //   console.log(" Parent ngAfterContentInit Called");
+  // }
+  // ngAfterContentChecked() {
+  //   console.log("Parent ngAfterContentChecked Called");
+  // }
+  // ngAfterViewInit() {
+  //   console.log("Parent ngAfterViewInit Called");
+  // }
+  // ngAfterViewChecked() {
+  //   console.log("Parent ngAfterViewChecked  Called ");
+  // }
+  // ngOnDestroy() {
+  //   console.log(" Parent ngOnDestroy  Called");
+  //   //alert("Destroying Component");
+  // }
 
   // userRegistrn = new FormGroup({
   //   fName: new FormControl(''),
