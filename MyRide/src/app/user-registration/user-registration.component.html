@@ -2,6 +2,8 @@
 	<h2>User Registration Form </h2>
 		<form [formGroup]="userRegistrn" (ngSubmit)="onUserSubmit(userRegistrn)">
 
+		<!-- Professional Degree : <input  #dg type="text" formControlName="degree" 
+								[ngModel]="degree" (ngModelChange) = "checkDegree($event)"> -->
 		<label>
 		First Name:
 		<input type="text" formControlName="fName">
@@ -36,4 +38,8 @@
 		</div>
 		<button type="submit" [disabled]="userRegistrn.invalid">Submit</button>
 		</form>
+</div>
+
+<div>
+<app-user-child [childAddress]=childAddress></app-user-child>
 </div>

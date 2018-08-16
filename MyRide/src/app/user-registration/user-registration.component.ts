@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {   Component, OnInit, OnChanges, 
+           DoCheck, AfterContentInit, AfterContentChecked,
+           AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
+
 //import { FormGroup, FormControl } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 
@@ -9,10 +12,62 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class UserRegistrationComponent implements OnInit {
 
-  constructor(private userForm : FormBuilder) { }
-  //userRegistrn:any;
+  degree : string  = '';
+  childAddress : any = {};
+
+  constructor(private userForm : FormBuilder) {
+      console.log(" Parent constructor Called ");
+      this.degree = "BE Computer";
+   }
+
+  // checkDegree(value){
+  //   console.log("CheckDegree Called !", value) ;
+  // }
 
   ngOnInit() {
+    console.log(" Parent ngOnInit Called ");
+    //this.onFormChange();
+  }
+
+  onFormChange(): void {
+      this.userRegistrn.valueChanges.subscribe(val => {
+        this.childAddress = val;
+        console.log(this.childAddress);
+      });
+  }
+  
+  ngOnChanges() {
+    console.log(` Parent ngOnChanges - Called`);
+  }
+
+  
+  ngDoCheck() {
+    console.log(" Parent ngDoCheck Called")
+  }
+
+  
+  ngAfterContentInit() {
+    console.log(" Parent ngAfterContentInit Called");
+  }
+
+  
+  ngAfterContentChecked() {
+    console.log("Parent ngAfterContentChecked Called");
+  }
+
+  
+  ngAfterViewInit() {
+    console.log("Parent ngAfterViewInit Called");
+  }
+
+
+  ngAfterViewChecked() {
+    console.log("Parent ngAfterViewChecked  Called ");
+  }
+
+  ngOnDestroy() {
+    console.log(" Parent ngOnDestroy  Called");
+    //alert("Destroying Component");
   }
 
   // userRegistrn = new FormGroup({
@@ -27,6 +82,7 @@ export class UserRegistrationComponent implements OnInit {
   // });
   
   userRegistrn = this.userForm.group({
+      degree:[''],
   		fName: ['', Validators.required],
   		lName: ['', Validators.required],
   		address: this.userForm.group({
@@ -38,7 +94,8 @@ export class UserRegistrationComponent implements OnInit {
   });
 
   onUserSubmit(userform) {
-  	console.warn(userform.value);
-  	//console.log(this.userRegistrn.get(fName));
+  	console.warn(userform.value, "userform");
+    this.childAddress = userform.value;
 	}
+
 }
