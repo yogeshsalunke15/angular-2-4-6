@@ -14,6 +14,8 @@ export class UserRegistrationComponent implements OnInit {
 
   degree : string  = '';
   childAddress : any = {};
+  user_validation_messages: any = {};
+  formSubmitted : boolean = false;
 
   constructor(private userForm : FormBuilder) {
       console.log(" Parent constructor Called ");
@@ -27,6 +29,46 @@ export class UserRegistrationComponent implements OnInit {
   ngOnInit() {
     console.log(" Parent ngOnInit Called ");
     //this.onFormChange();
+    this.user_validation_messages = {
+        'fName': [
+          { type: 'required', message: 'First Name  is required' },
+          { type: 'minlength', message: 'First Name  must be at least 3 characters long' }
+        ],
+        'lName': [
+          { type: 'required', message: 'Last Name  is required' },
+          { type: 'minlength', message: 'Last Name  must be at least 3 characters long' }
+        ],
+        'email': [
+          { type: 'required', message: 'Email is required' },
+          { type: 'pattern', message: 'Enter a valid email' }
+        ],
+        'phone': [
+          { type: 'required', message: 'Phone is required' },
+          { type: 'pattern', message: 'Enter a valid email' },
+          { type: 'minlength', message: 'Phone must be at least 10 characters long' },
+          { type: 'maxlength', message: 'Phone must not exceed more than 14 character' }
+        ],
+        'street': [
+          { type: 'required', message: 'Street / house no is required' },
+          { type: 'maxlength', message: 'Street / house no must not exceed more than 30 character'}
+        ],
+        'city': [
+          { type: 'required', message: 'city is required' },
+          { type: 'minlength', message: 'city must be at least 3 characters long' },
+          { type: 'maxlength', message: 'city must not exceed more than 20 character' }
+        ],
+        'state': [
+          { type: 'required', message: 'state is required' },
+          { type: 'minlength', message: 'state must be at least 3 characters long' },
+          { type: 'maxlength', message: 'state must not exceed more than 50 character' }
+        ],
+        'zip': [
+          { type: 'required', message: 'zip code is required' },
+          { type: 'minlength', message: 'zip must be at least 6 characters long' },
+          { type: 'maxlength', message: 'zip must not exceed more than 18 character' }
+        ]
+    }
+
   }
 
   onFormChange(): void {
@@ -69,22 +111,50 @@ export class UserRegistrationComponent implements OnInit {
   //   	state: new FormControl('')
   //   })
   // });
-  
+
   userRegistrn = this.userForm.group({
       degree:[''],
-  		fName: ['', Validators.required],
-  		lName: ['', Validators.required],
+  		fName: ['', Validators.compose([Validators.required, 
+                                      Validators.minLength(3)
+                                      ])], 
+  		lName: ['',  Validators.compose([Validators.required, 
+                                      Validators.minLength(3)
+                                      ])],
+      email:['',  Validators.compose([Validators.required, 
+                                      Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+                                      ])],
+      phone:['', Validators.compose([Validators.required,
+                                     Validators.minLength(10),
+                                     Validators.maxLength(14), 
+                                      Validators.pattern('[0-9]+')
+                                      ])],
   		address: this.userForm.group({
-  			street: [''],
-		    city: [''],
-		    state: [''],
-		    zip: ['', Validators.required]
+    			street: ['',Validators.compose([Validators.required,
+                                         Validators.maxLength(50)
+                                        ])],
+  		    city: ['', Validators.compose([Validators.required,
+                                         Validators.minLength(3),
+                                         Validators.maxLength(20)
+                                        ])],
+  		    state: ['', Validators.compose([Validators.required,
+                                         Validators.minLength(3),
+                                         Validators.maxLength(30)
+                                        ])],
+  		    zip: ['', Validators.compose([Validators.required,
+                                         Validators.minLength(6),
+                                         Validators.maxLength(18)
+                                        ])]
   		})
   });
 
+
   onUserSubmit(userform) {
-  	console.warn(userform.value, "userform");
+  	//console.warn(userform.value, "userform");
+      if (this.userRegistrn.invalid) { 
+            return;
+       }
     this.childAddress = userform.value;
+    this.userRegistrn.reset();
 	}
 
 }
