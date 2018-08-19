@@ -11,7 +11,10 @@ import { ViewParentComponent } from './view-parent/view-parent.component';
 import { ViewChildComponent } from './view-child/view-child.component';
 import { ServiceParentComponent } from './service-parent/service-parent.component';
 import { ServiceChildComponent } from './service-child/service-child.component';
-import { ServiceSiblingComponent } from './service-sibling/service-sibling.component';
+
+/*Services*/
+import { MessageSharingService } from './message-sharing.service';
+
 
 @NgModule({
   declarations: [
@@ -23,15 +26,14 @@ import { ServiceSiblingComponent } from './service-sibling/service-sibling.compo
     ViewParentComponent,
     ViewChildComponent,
     ServiceParentComponent,
-    ServiceChildComponent,
-    ServiceSiblingComponent
+    ServiceChildComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [MessageSharingService],
   //bootstrap: [AppComponent] 
   entryComponents: [UserRegistrationComponent, AdminComponent]
 
