@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-admin',
   template: `
 	    <div class='row mb-4'><h3>Hello Yogesh Salunke: Wlecome to Component Inter Communication </h3></div>
-	    <div class='mb-3'><app-admin-child [msg1]="parentMessge" 
+	    <div class='mb-3'><app-admin-child [yogesh]="parentMessge" 
 								    [msg2]="IndiaMessge" 
 								    [AtalMsg]="AtalMsg"
 								    [voterList] = "votersList"
@@ -19,6 +19,8 @@ import { Component, OnInit } from '@angular/core';
 	    		<div>Disagreed : {{disagreed}}</div>
 	    	</div>
 	    </div>
+	    <div class="mt-4"> <h3>Below Component Communication Using @ViewChild Decorator</h3></div>
+	    <app-view-parent></app-view-parent>
 
 	  `,
   styleUrls: ['./admin.component.css']

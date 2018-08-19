@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output,  EventEmitter } from '@angular/core';
 })
 export class AdminChildComponent implements OnInit {
 
-  @Input() msg1: string;
+  @Input('yogesh') msg1: string;
   @Input() msg2: string;
   @Input() AtalMsg:	string;
   @Input() voterList;

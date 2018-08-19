@@ -1,12 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { UserChildComponent } from './user-child/user-child.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminChildComponent } from './admin-child/admin-child.component';
+import { ViewParentComponent } from './view-parent/view-parent.component';
+import { ViewChildComponent } from './view-child/view-child.component';
+import { ServiceParentComponent } from './service-parent/service-parent.component';
+import { ServiceChildComponent } from './service-child/service-child.component';
+import { ServiceSiblingComponent } from './service-sibling/service-sibling.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +19,17 @@ import { AdminChildComponent } from './admin-child/admin-child.component';
     UserRegistrationComponent,
     UserChildComponent,
     AdminComponent,
-    AdminChildComponent
+    AdminChildComponent,
+    ViewParentComponent,
+    ViewChildComponent,
+    ServiceParentComponent,
+    ServiceChildComponent,
+    ServiceSiblingComponent
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   //bootstrap: [AppComponent] 

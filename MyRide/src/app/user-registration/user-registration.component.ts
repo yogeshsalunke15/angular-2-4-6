@@ -16,6 +16,13 @@ export class UserRegistrationComponent implements OnInit {
   childAddress : any = {};
   user_validation_messages: any = {};
   formSubmitted : boolean = false;
+  
+  /* template form Data Variables */
+  fullName : string = "Yogesh Salunke";
+  mobile : number = 9922020434;
+  email : string = 'yogeshsalunke15@gmail.com';  
+
+
 
   constructor(private userForm : FormBuilder) {
       console.log(" Parent constructor Called ");
@@ -157,4 +164,10 @@ export class UserRegistrationComponent implements OnInit {
     this.userRegistrn.reset();
 	}
 
+
+  /* Called on template driven form submission */
+
+  OnTemplateSubmission(templateData : any){
+    console.log(templateData);
+  }
 }

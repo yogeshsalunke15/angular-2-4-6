@@ -1,6 +1,6 @@
 <div class="userForm">
 <div class="row">
-	<div class="col-md-12 text-center mt-3 mb-2"><h4>User Registration Form </h4></div>
+	<div class="col-md-12 text-center mt-3 mb-2"><h4>Reactive Form : User Registration Form </h4></div>
 </div>	
 <form [formGroup]="userRegistrn" (ngSubmit)="onUserSubmit(userRegistrn)" novalidate>
 
@@ -91,6 +91,45 @@
 	</div>
 </form>
 </div>
+
 <div class="row">
 <app-user-child [childAddress]=childAddress></app-user-child>
+</div>
+
+<div class="row">
+		<div class="col-md-12 text-center mt-3 mb-2"><h4>Template Driven Form </h4></div>
+</div>
+
+<div class="row text-center">
+	<form #loginForm="ngForm" (ngSubmit)="OnTemplateSubmission(loginForm.value)" >
+		<div class="col">
+			<label for="name">Full Name</label>
+	       	<input type="text" class="form-control" id="name" 
+	       	name="fullName" [(ngModel)]="fullName">
+	       	<!-- {{fullNm.value}} -->			
+		</div>
+		<div class="col col mt-2">
+			<label for="phone">Mobile</label>
+	       	<input type="text" class="form-control" id="phone" 
+	       	name="mobile" [(ngModel)]="mobile">
+	       	<!-- {{fullNm.value}} -->			
+		</div>
+		<div class="col mt-2">
+			<label for="email">Email</label>
+	       	<input type="text" class="form-control" id="email" 
+	       	name="email" [(ngModel)]="email">
+	       	<!-- {{fullNm.value}} -->			
+		</div>
+		<fieldset ngModelGroup="address" class="mt-3 mb-4">
+		  <label>Street:</label>
+		  <input type="text" name="street"  ngModel required="required">
+
+		  <label>Zip:</label>
+		  <input type="text" name="zip" ngModel>
+
+		  <label>City:</label>
+		  <input type="text" name="city" ngModel>
+		</fieldset>
+		<button type="submit" class="btn btn-success mb-4" [disabled]="!loginForm.form.valid">Submit</button>
+	</form>
 </div>
