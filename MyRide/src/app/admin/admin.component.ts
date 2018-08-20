@@ -21,6 +21,8 @@ import { Component, OnInit } from '@angular/core';
 	    </div>
 	    <div class="mt-4"> <h3>Below Component Communication Using @ViewChild Decorator</h3></div>
 	    <app-view-parent></app-view-parent>
+	    <div class="mt-4"> <h3>Below Component Communication Using HTTP Client Module & Obervables</h3></div>
+	    <app-service-parent></app-service-parent>
 
 	  `,
   styleUrls: ['./admin.component.css']

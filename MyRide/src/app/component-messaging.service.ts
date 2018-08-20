@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ComponentMessagingService {
+ apiUrl : string;
+  constructor(private http: HttpClient) {
+  	this.apiUrl = 'assets/users.json';
+   }
 
-  constructor() { }
+   getUsers() {
+    	return this.http.get(this.apiUrl);
+    }
 }
