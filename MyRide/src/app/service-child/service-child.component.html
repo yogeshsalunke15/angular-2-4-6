@@ -1,3 +1,16 @@
-<p>
-  service-child works!
-</p>
+<div class="row">
+	
+	<ul *ngIf="customers |async as cust else empty">
+            <li *ngFor="let customer of cust">
+            	{{customer.id}} ---
+            	{{customer.name}} ---
+            	{{customer.email}} ----
+            	{{customer.tel}}
+            </li> 
+    </ul>
+    <ng-template #empty> No Customers Yet </ng-template>
+    <button (click)="saveCust()"> Put Save Customer </button>
+    <button (click)="patchCust()"> Patch Save Customer Partially </button>
+    <button (click)="deleteCust()"> Delete Customer </button>
+    <button (click)="postCust()"> Post Customer </button>
+</div>

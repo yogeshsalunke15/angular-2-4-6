@@ -7,7 +7,7 @@ import { Observable, Subject  } from 'rxjs';
 })
 export class MessageSharingService {
 
- private SharedObject : any = {};a
+ private SharedObject : any = {};
  private observableMsg = new Subject<any>();
   
   constructor() { 

@@ -15,7 +15,7 @@ export class ServiceParentComponent implements OnInit {
 
   ngOnInit() {
 
-  	this.userService
+  	this.userService	
       .getUsers()
       .subscribe((data: Users[]) => {
           this.users = data;
