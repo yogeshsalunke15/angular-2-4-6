@@ -19,6 +19,8 @@ import { ServiceChildComponent } from './service-child/service-child.component';
 /*Services*/
 import { MessageSharingService } from './message-sharing.service';
 import { AppRoutingModule } from './app-routing.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { AppRoutingModule } from './app-routing.module';
     ViewParentComponent,
     ViewChildComponent,
     ServiceParentComponent,
-    ServiceChildComponent
+    ServiceChildComponent,
+    PageNotFoundComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,

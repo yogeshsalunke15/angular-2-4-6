@@ -9,12 +9,13 @@
 		<div class="col-md-12">----------------Lazy Laoding Routes Loaded below ------------------</div>
 			<div class="col-md-12"><button routerLink="/lazyOrders">Lazy Orders</button>&nbsp;&nbsp;&nbsp;
 			<button routerLink="/lazyCustomers">lazyCustomers</button>&nbsp;&nbsp;&nbsp;
-			<button routerLink="">Home</button>&nbsp;&nbsp;&nbsp;
+			<button routerLink="/home">Home</button>&nbsp;&nbsp;&nbsp;
+			<button [routerLink]="['detail','15-02-1990']">Parameterised Route</button>&nbsp;&nbsp;&nbsp;
 			</div>
 		<div class="col-md-12"><router-outlet></router-outlet></div><br><br>
 </div>
 
-  <app-admin></app-admin>
+<!--   <app-admin></app-admin> -->
 
 
 
