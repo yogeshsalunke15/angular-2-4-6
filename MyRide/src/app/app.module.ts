@@ -14,8 +14,11 @@ import { ViewChildComponent } from './view-child/view-child.component';
 import { ServiceParentComponent } from './service-parent/service-parent.component';
 import { ServiceChildComponent } from './service-child/service-child.component';
 
+//import { LazyCustomersModule } from './lazy-customers/lazy-customers.module';
+
 /*Services*/
 import { MessageSharingService } from './message-sharing.service';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -34,19 +37,20 @@ import { MessageSharingService } from './message-sharing.service';
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [MessageSharingService],
-  //bootstrap: [AppComponent] 
-  entryComponents: [UserRegistrationComponent, AdminComponent]
+  bootstrap: [AppComponent] 
+  //entryComponents: [UserRegistrationComponent, AdminComponent]
 
 })
 export class AppModule { 
 
-	ngDoBootstrap(app){
+	/*ngDoBootstrap(app){
  		
  		let element = document.createElement('app-admin');
  		document.body.appendChild(element);
  		app.bootstrap(AdminComponent);
-	}
+	}  */
 }
