@@ -14,7 +14,7 @@ import { ViewChildComponent } from './view-child/view-child.component';
 import { ServiceParentComponent } from './service-parent/service-parent.component';
 import { ServiceChildComponent } from './service-child/service-child.component';
 
-//import { LazyCustomersModule } from './lazy-customers/lazy-customers.module';
+import { CountryModuleModule }  from './country-module/country-module.module';
 
 /*Services*/
 import { MessageSharingService } from './message-sharing.service';
@@ -42,6 +42,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    CountryModuleModule,
     AppRoutingModule
   ],
   providers: [MessageSharingService],

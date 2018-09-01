@@ -1,0 +1,17 @@
+<br>
+<div class="row"> 
+	<div class="col-md-12">You are Inside Country Component loaded</div>  
+	<div class="col-md-12 mb-3">
+		<button  [routerLink]="['add']">Add New Country Component -> Child Level 1</button>
+		<!-- <button  routerLink="/country/add">Add New Country Component -> Child Level 1</button> -->
+	</div>
+	<div class="col-md-12">
+		<button  routerLink="/country/list">List Country Component -> Child Level 1</button>
+	</div>
+	<div class="col-md-12 mt-4 mb-3">
+	<a [routerLink]="['/country/list/view', 15]" routerLinkActive="mycss">href used</a>
+	</div>
+	<div class="col-md-12"><br>
+		<router-outlet></router-outlet>
+	</div>
+</div>
