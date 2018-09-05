@@ -21,6 +21,7 @@ import { MessageSharingService } from './message-sharing.service';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { CustomThemeDirective } from './directives-attribute/custom-theme.directive';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     ServiceParentComponent,
     ServiceChildComponent,
     PageNotFoundComponent,
-    HomePageComponent
+    HomePageComponent,
+    CustomThemeDirective
   ],
   imports: [
     BrowserModule,

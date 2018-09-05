@@ -1,10 +1,19 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h2>
+  <h2 >
     Welcome to App Component {{ title }}!
   </h2>
   </div>
-
+	
+	<div appCustomTheme > Attribute Directive Usage</div>
+	<div appCustomTheme inputColor={{bgColor}} align= "center" > Attribute Directive with @Input </div>
+	<div [appCustomTheme]="textdeco"> Attribute Directive with @Input from component user input </div>
+	<div bind-appCustomTheme="bdr"> Attribute Directive with @Input from component user input </div>
+	<!-- <div appCustomTheme="{{textdeco}}"> Attribute Directive with @Input from component user input </div>
+ -->
+ 	<div [appCustomTheme]="pink" defaultColor="skyblue"> Attribute Directive with @Input from component user input & @HostListener </div>
+	
+<br>
   <div class="row">
 		<div class="col-md-12">----------------Lazy Laoding Routes Loaded below ------------------</div>
 			<div class="col-md-12"><button routerLink="/lazyOrders">Lazy Orders</button>&nbsp;&nbsp;&nbsp;
@@ -16,7 +25,7 @@
 		<div class="col-md-12"><router-outlet></router-outlet></div><br><br>
 </div>
 
-<!--   <app-admin></app-admin> -->
+  <app-admin></app-admin>
 
 
 
