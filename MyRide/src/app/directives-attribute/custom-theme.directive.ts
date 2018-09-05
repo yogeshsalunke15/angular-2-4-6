@@ -19,6 +19,10 @@ export class CustomThemeDirective implements AfterViewInit{
 @HostListener('mouseleave') onMouseLeave() {
 	 this.changeBackgroundColor(this.defaultColor || this.textDeco);
 }
+@HostListener('click') onClick() {
+   this.changeBackgroundColor('red');
+}
+
 
   ngAfterViewInit():void { console.log("textDeco", this.textDeco);
   	this.elRef.nativeElement.style.color = 'red';
