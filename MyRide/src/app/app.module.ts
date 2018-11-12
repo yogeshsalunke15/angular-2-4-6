@@ -21,7 +21,10 @@ import { MessageSharingService } from './message-sharing.service';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { CustomThemeDirective } from './directives-attribute/custom-theme.directive';
+import { CustomThemeDirective } from './directives/custom-theme.directive';
+import { CustomStructuralDirective } from './directives/custom-structural.directive';
+import { AttributeDirectiveComponent } from './attribute-directive/attribute-directive.component';
+import { StructuralDirectiveComponent } from './structural-directive/structural-directive.component';
 
 
 @NgModule({
@@ -37,7 +40,10 @@ import { CustomThemeDirective } from './directives-attribute/custom-theme.direct
     ServiceChildComponent,
     PageNotFoundComponent,
     HomePageComponent,
-    CustomThemeDirective
+    CustomThemeDirective,
+    AttributeDirectiveComponent,
+    StructuralDirectiveComponent,
+    CustomStructuralDirective
   ],
   imports: [
     BrowserModule,

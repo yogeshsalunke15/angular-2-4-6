@@ -1,0 +1,9 @@
+<div class="row">
+	
+	<div appCustomTheme  class="col-md-4"> Attribute Directive Usage</div>
+	<div appCustomTheme inputColor={{bgColor}} align= "center"  class="col-md-4"> Attribute Directive with @Input </div>
+	<div [appCustomTheme]="textdeco" class="col-md-4"> Attribute Directive with @Input from component user input </div>
+	<div bind-appCustomTheme="bdr"  class="col-md-4"> Attribute Directive with @Input from component user input </div>
+ 	<div [appCustomTheme]="pink" defaultColor="skyblue" class="col-md-4"> Attribute Directive with @Input from component user input & @HostListener </div>
+
+</div>

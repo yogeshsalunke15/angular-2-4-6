@@ -4,7 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { ServiceParentComponent } from './service-parent/service-parent.component';  
+import { ServiceParentComponent } from './service-parent/service-parent.component';
+import { AttributeDirectiveComponent } from './attribute-directive/attribute-directive.component';
+import { StructuralDirectiveComponent } from './structural-directive/structural-directive.component';
 
 const routes:Routes = [
   	{
@@ -20,12 +22,21 @@ const routes:Routes = [
   	
   	},
   	{
-  		path: 'detail/:id', component: ServiceParentComponent
+  		path: 'detail/:id', 
+      component: ServiceParentComponent
   	},
   	{ 
-  		path:'home', component: HomePageComponent
+  		path:'home', 
+      component: HomePageComponent
   	},
-   	
+    { 
+      path:'attributeDir', 
+      component: AttributeDirectiveComponent
+    },
+   	{ 
+      path:'structuralDir', 
+      component: StructuralDirectiveComponent
+    },
    	{
 		path:'',
 		redirectTo: 'home',

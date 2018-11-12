@@ -5,24 +5,26 @@
   </h2>
   </div>
 	
-	<div appCustomTheme > Attribute Directive Usage</div>
-	<div appCustomTheme inputColor={{bgColor}} align= "center" > Attribute Directive with @Input </div>
-	<div [appCustomTheme]="textdeco"> Attribute Directive with @Input from component user input </div>
-	<div bind-appCustomTheme="bdr"> Attribute Directive with @Input from component user input </div>
-	<!-- <div appCustomTheme="{{textdeco}}"> Attribute Directive with @Input from component user input </div>
- -->
- 	<div [appCustomTheme]="pink" defaultColor="skyblue"> Attribute Directive with @Input from component user input & @HostListener </div>
+	<div class="row mb-3">
+		<div class="col-md-12  directive">Custom Directives :</div>
+		<div class="col-md-3">
+			<button routerLink="/attributeDir" class="attribute"> Attribute Directive</button>
+		</div>
+		<div class="col-md-3 "><button routerLink="/structuralDir" class="structural"> Structural Directive</button> </div>
+	</div>
+
+	<div class="col-md-12"><router-outlet></router-outlet></div><br><br>
 	
 <br>
   <div class="row">
 		<div class="col-md-12">----------------Lazy Laoding Routes Loaded below ------------------</div>
-			<div class="col-md-12"><button routerLink="/lazyOrders">Lazy Orders</button>&nbsp;&nbsp;&nbsp;
+			<div class="col-md-12">
+			<button routerLink="/lazyOrders">Lazy Orders</button>&nbsp;&nbsp;&nbsp;
 			<button routerLink="/lazyCustomers">lazyCustomers</button>&nbsp;&nbsp;&nbsp;
 			<button routerLink="/home">Home</button>&nbsp;&nbsp;&nbsp;
 			<button [routerLink]="['detail','15-02-1990']">Parameterised Route</button>&nbsp;&nbsp;&nbsp;
 			<button [routerLink]="['country']">Country Main Module</button>&nbsp;&nbsp;&nbsp;
 			</div>
-		<div class="col-md-12"><router-outlet></router-outlet></div><br><br>
 </div>
 
   <app-admin></app-admin>
