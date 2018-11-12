@@ -1,11 +1,14 @@
-import { Directive, Input } from '@angular/core';
+import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 
 @Directive({
   selector: '[appCustomStructural]'
 })
 export class CustomStructuralDirective {
 
-  constructor() { }
+  constructor(	private templateRef: TemplateRef<any>, 
+  				private viewContainer:ViewContainerRef) { 
+
+  	}
 
 	/* set method name should be exactly same as directive selector  or aonther way is create  aliase as below*/
 	  @Input() set appCustomStructural(condition:boolean){
@@ -14,12 +17,11 @@ export class CustomStructuralDirective {
 
 	/* Aliase of above method */
 	 @Input('appCustomStructural') set showHide(condition:boolean) {
-	 			alert("Structral Directive called");
 	 		if(condition){
-
+	 			this.viewContainer.createEmbeddedView(this.templateRef);
 	 		}
 	 		else{
-
+	 			this.viewContainer.clear();
 	 		}
 	 }
 
