@@ -4,4 +4,18 @@
   		<input type="radio" name="rad1" (click)= "showHIde= false"> False
 	</div>
 	<div class="col-md-12" *appCustomStructural="showHIde">Structural Directive with if condition !</div>
+	<ng-template [appCustomStructural]="!showHIde">
+		   <div>
+		      <b>Message not Available.</b>
+		  </div>
+	</ng-template>
+
+	<!-- <div class="col-md-12 mt-2 mb-2">
+		<h4>For Loop Directive</h4>
+			<ul>
+			 <li *appCustomStructural="5" >
+			     Hello Yogesh Salunke !
+			 </li> 
+			</ul> 
+	</div> -->
 </div>
