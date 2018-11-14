@@ -1,0 +1,51 @@
+
+<!--If Block start-->
+<div class="row mt-4">
+	<!--If Block start-->
+	<div class="col-md-4"> <div><b>ngIf Directive</b></div>	
+		<input type="radio" name="rad3" (click)= "changeValue(true)"> IfBlock
+		<input type="radio" name="rad3" (click)= "changeValue(false)"> elseBlock
+		<div *ngIf="valid; then thenBlock; else elseBlock"></div>
+		<ng-template #thenBlock>
+		  <div> IfBlock= true</div> 
+		</ng-template>
+		<ng-template #elseBlock>
+		  <div> IfBlock = false. </div> 
+		</ng-template>
+	</div>
+	<!--If Block Ends-->
+
+	<!--ngFor / ngForOf in v4 Block start-->
+	<div class="col-md-4"> 
+		<div><b>ngFor Directive</b></div>	
+		<div *ngFor="let user of users; let i = index; trackBy: changePropagaionfn">
+		  Row {{i}} : {{user.name}} - {{user.age}}
+		   <button (click)="adduser()">Add User</button>
+		</div>
+		<b>first and last variable demo </b>
+ 			<div *ngFor="let user of users; let i = index; let f=first; let l=last;">
+  				Row {{i}} : Name: {{user.name}}, is first row: {{f}}, is last row: {{l}}
+ 			</div>
+ 		<b>even and odd variable demo </b>
+ 			<div *ngFor="let user of users; let i = index; let e=even; let o=odd;">
+  				Row {{i}} : Name: {{user.name}}, is even row: {{e}}, is odd row: {{o}}
+ 			</div>
+	</div>
+	<!--ngFor Block Ends-->
+
+	<!--NgClass Block start-->
+	<div class="col-md-4"> <div><b>NgClass Directive</b></div>	
+		<p [ngClass]="'two one'"> uisng ng class attribute</p>
+		<p [ngClass]="['one', 'three']">Using NgClass with Array.</p>  
+		<p [ngClass]="{'one': true, 'three': false }">Using NgClass with Object.</p> 
+		<p [ngClass]="ngclasses">Using Variable Object from Component.</p> 
+	</div>
+	<!--NgClass Block Ends-->
+
+	<!--NgSwitch Block start-->
+	<div class="col-md-4"> <div><b>NgSwitch Directive</b></div>	
+		
+	</div>
+	<!--NgSwitch Block Ends-->
+</div>
+

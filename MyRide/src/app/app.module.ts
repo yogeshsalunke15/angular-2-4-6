@@ -25,6 +25,7 @@ import { CustomThemeDirective } from './directives/custom-theme.directive';
 import { CustomStructuralDirective } from './directives/custom-structural.directive';
 import { AttributeDirectiveComponent } from './attribute-directive/attribute-directive.component';
 import { StructuralDirectiveComponent } from './structural-directive/structural-directive.component';
+import { InBuiltDirectivesComponent } from './in-built-directives/in-built-directives.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { StructuralDirectiveComponent } from './structural-directive/structural-
     CustomThemeDirective,
     AttributeDirectiveComponent,
     StructuralDirectiveComponent,
-    CustomStructuralDirective
+    CustomStructuralDirective,
+    InBuiltDirectivesComponent
   ],
   imports: [
     BrowserModule,
