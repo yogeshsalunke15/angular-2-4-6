@@ -25,3 +25,40 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+-----------------------## Angular Commands---------------------------
+
+Angular js commands
+
+Created HTTP Json Server   :  json-server --watch db.json
+
+
+1) Angular Cli ==>   npm install -g @angular/cli
+
+2) Create Project ==> ng new angular-tour-of-heroes
+
+3) Serve On Brower ==>  ng serve --open
+
+4) Create New Component  ==>  ng generate component heroes
+
+5)  New Service   ===>  ng generate service hero
+
+6)	New Module 	==> ng generate module app-routing --flat --module=app
+						
+						--flat puts the file in src/app instead of its own folder.
+						--module=app tells the CLI to register it in the imports array of the AppModule.
+						
+						
+7)	new Class   ==> 	ng generate class hero
+
+8) new Directive  ==>  ng generate directive highlight
+
+10) new Interface ----> ng g interface Users
+
+11) ng serve --configuration=fr  ----> starting app for language French
+
+12) ng xi18n --outputPath=locale   -----> Create Locale files in xlf format
+
+
+9) ng new customer-app --routing:  ==> This creates an app called customer-app and the --routing flag generates a file called app-routing.module.ts, which is one of the files you need for setting up lazy loading for your feature module.
