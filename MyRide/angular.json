@@ -23,8 +23,8 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "sass/styles.scss"
             ],
             "scripts": []
           },
@@ -57,10 +57,12 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "fileReplacements": [{
-                "replace": "src/environments/environment.ts",
-                "with": "src/environments/environment.prod.ts"
-              }],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "baseHref": "/es/",
               "i18nFile": "src/locale/messages.es.xlf",
               "i18nFormat": "xlf",
@@ -78,10 +80,12 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "fileReplacements": [{
-                "replace": "src/environments/environment.ts",
-                "with": "src/environments/environment.prod.ts"
-              }],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "baseHref": "/de/",
               "i18nFile": "src/locale/messages.de.xlf",
               "i18nFormat": "xlf",
@@ -99,10 +103,12 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "fileReplacements": [{
-                "replace": "src/environments/environment.ts",
-                "with": "src/environments/environment.prod.ts"
-              }],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "baseHref": "/fr/",
               "i18nFile": "src/locale/messages.fr.xlf",
               "i18nFormat": "xlf",
@@ -111,7 +117,6 @@
             }
           }
         },
-
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
@@ -119,8 +124,8 @@
           },
           "configurations": {
             "es": {
-                "browserTarget": "MyRide:build:production-es"
-              },
+              "browserTarget": "MyRide:build:production-es"
+            },
             "de": {
               "browserTarget": "MyRide:build:production-de"
             },
@@ -197,5 +202,10 @@
       }
     }
   },
-  "defaultProject": "MyRide"
+  "defaultProject": "MyRide",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
