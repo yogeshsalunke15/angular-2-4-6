@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StructuralDirectiveComponent implements OnInit {
 
-  // showHIde:boolean = false;
+  showHIde:boolean = false;
   
   constructor() { }
 

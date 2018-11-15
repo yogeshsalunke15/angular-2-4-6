@@ -8,8 +8,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'MyRide Application ';
-  bgColor = '#36ef36';
-  textdeco = "underline";
-  bdr = "2px solid blue";
-  pink = 'pink';
 }

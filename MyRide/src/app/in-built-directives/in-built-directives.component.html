@@ -44,7 +44,12 @@
 
 	<!--NgSwitch Block start-->
 	<div class="col-md-4"> <div><b>NgSwitch Directive</b></div>	
-		
+		<ul [ngSwitch]="test">
+			  <li *ngSwitchCase="'Mohan'">Hello Mohan</li>
+			  <li *ngSwitchCase="'Sohan'">Hello Sohan</li>
+			  <li *ngSwitchCase="'Vijay'">Hello Vijay</li>
+			  <li *ngSwitchDefault>This is defualt case Yogesh</li>
+		</ul>  
 	</div>
 	<!--NgSwitch Block Ends-->
 </div>

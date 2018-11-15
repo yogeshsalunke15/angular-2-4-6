@@ -14,6 +14,7 @@ export class InBuiltDirectivesComponent implements OnInit {
  	{name:'Megha', age:30}
  ]
  ngclasses = {'one':true, 'three':true};
+ test: null;
   constructor() { }
 
   ngOnInit() {
