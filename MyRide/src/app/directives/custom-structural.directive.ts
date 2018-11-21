@@ -26,11 +26,11 @@ export class CustomStructuralDirective {
 	 }
 
 	 /* Directive  with for loop */
-	 // @Input ('appCustomStructural') set cploop (num:number){
+	 @Input ('appCustomStructural') set cploop (num:number){
 
-	 // 		for (var i = 0; i < num; ++i) {
-	 // 			this.viewContainer.createEmbeddedView(this.templateRef);
-	 // 		}
-	 // }
+	 		for (var i = 0; i < num; ++i) {
+	 			this.viewContainer.createEmbeddedView(this.templateRef);
+	 		}
+	 }
 
 }

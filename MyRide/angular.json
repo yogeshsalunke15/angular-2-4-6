@@ -24,7 +24,7 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.css",
-              "sass/styles.scss"
+              "src/styles.css"
             ],
             "scripts": []
           },
@@ -200,12 +200,6 @@
           }
         }
       }
-    }
-  },
-  "defaultProject": "MyRide",
-  "schematics": {
-    "@schematics/angular:component": {
-      "styleext": "scss"
     }
   }
 }
