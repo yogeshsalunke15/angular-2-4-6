@@ -1,0 +1,17 @@
+<div class="row" #parentDiv >
+	<div class="col-md-12"> 
+		Increase or Decrease Example:
+		<button type="button" (click)="increase()" class="mr-3">Increase</button>
+		<button type="button" (click)="decrease()">Decrease</button>
+		<br/><br/>
+
+	</div>
+	<div class="col-md-12 mt-4">
+		<b>Obervable Message Using Service Sharing Data:</b>
+		{{this.message}}
+	</div>
+	<div class="col-md-12 mt-4">
+		<h5> This is child component of View-Parent ie. View Child</h5>
+  		<app-view-child></app-view-child>
+	</div>
+</div>

@@ -1,0 +1,22 @@
+.directive {
+	font-size: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight: bold;
+	color: red;
+}
+.attribute {
+font-size: 16px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight: bold;
+	color: blue;
+}
+
+.structural {
+    font-size: 16px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight: bold;
+	color: green;
+}

@@ -1,0 +1,13 @@
+<br><br><br>
+<div><h3>This is User Child Component : Child component is showing the Address of User entered In Parent Component !</h3>
+
+<p>Fname:  {{ childAddress.fName }} </p>
+<p>lName:  {{ childAddress.lName }} </p>
+<p>Address:  </p>
+		<p>Street:  {{ childAddress.address.street }} </p>
+		<p>city:  {{ childAddress.address.city }} </p>
+		<p>state:  {{ childAddress.address.state }} </p>
+		<p>zip:  {{ childAddress.address.zip }} </p>
+
+<p>In Json Format : {{childAddress | json }}</p>
+</div><br>

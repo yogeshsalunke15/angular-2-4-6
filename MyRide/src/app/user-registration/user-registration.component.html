@@ -1,0 +1,135 @@
+<div class="userForm">
+<div class="row">
+	<div class="col-md-12 text-center mt-3 mb-2"><h4>Reactive Form : User Registration Form </h4></div>
+</div>	
+<form [formGroup]="userRegistrn" (ngSubmit)="onUserSubmit(userRegistrn)" novalidate>
+
+		<!-- Professional Degree : <input  #dg type="text" formControlName="degree" 
+								[ngModel]="degree" (ngModelChange) = "checkDegree($event)"> -->
+	<div class="form-row mb-2">
+		<div class="col">	
+			<label for="fist">First Name <span style="color:red">*</span>:</label>
+      		<input type="text" class="form-control" formControlName="fName" id="first" placeholder="First Name">
+	      		<div  *ngFor="let validation of user_validation_messages.fName">
+	      			<div class="alert alert-danger" *ngIf="userRegistrn.controls.fName.hasError(validation.type) && 
+	      			(userRegistrn.controls.fName.touched || userRegistrn.controls.fName.dirty)">{{validation.message}}	</div>
+	    		</div>
+		</div>
+		<div class="col">	
+			<label for="last">Last Name <span style="color:red">*</span>:</label>
+      		<input type="text" class="form-control" formControlName="lName" id="last" placeholder="Last Name">
+	      		<div *ngFor="let validation of user_validation_messages.lName">
+	      			<div class="alert alert-danger" *ngIf="userRegistrn.controls.lName.hasError(validation.type) && 
+	      			(userRegistrn.controls.lName.touched || userRegistrn.controls.lName.dirty)">{{validation.message}}	</div>
+	    		</div>	
+		</div>
+	</div>
+	<div class="form-row mb-2">
+		<div class="col">	
+			<label for="email">Email<span style="color:red">*</span>:</label>
+      		<input type="text" class="form-control" formControlName="email" id="email" placeholder="enter email">
+      		<div *ngFor="let validation of user_validation_messages.email">
+	      			<div  class="alert alert-danger" *ngIf="userRegistrn.controls.email.hasError(validation.type) && 
+	      			(userRegistrn.controls.email.touched || userRegistrn.controls.email.dirty)">{{validation.message}}	</div>
+	    	</div>		
+		</div>
+		<div class="col">	
+			<label for="phone">Phone Number<span style="color:red">*</span>:</label>
+      		<input type="text" class="form-control" formControlName="phone" id="phone" placeholder="enter phone Number">
+      		<div *ngFor="let validation of user_validation_messages.phone">
+	      			<div class="alert alert-danger" *ngIf="userRegistrn.controls.phone.hasError(validation.type) && 
+	      			(userRegistrn.controls.phone.touched || userRegistrn.controls.phone.dirty)">{{validation.message}}	</div>
+	    	</div>		
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="col-md-3 font-weight-bold">
+    		<label class="pl-2">Present Address:</label>
+    	</div>
+    	<div class="col-md-9 mb-3" formGroupName="address">
+    		<div class="form-row">
+    			<div class="form-group col-md-4">
+		    		<label for="strt">Street:</label>
+		      		<input type="text" class="form-control" formControlName="street" id="strt" placeholder="enter street">
+		      		<div *ngFor="let validation of user_validation_messages.street">
+		      			<div class="alert alert-danger" *ngIf="userRegistrn.get('address.street').hasError(validation.type) && 
+		      			(userRegistrn.get('address.street').touched || userRegistrn.get('address.street').dirty)">{{validation.message}}</div>
+	    			</div>
+	    		</div>
+	    		<div class="form-group col-md-4">
+		    		<label for="cty">City <span style="color:red">*</span>:</label>
+		      		<input type="text" class="form-control" formControlName="city" id="cty" placeholder="enter city">
+		      		<div *ngFor="let validation of user_validation_messages.city">
+		      			<div class="alert alert-danger" *ngIf="userRegistrn.get('address.city').hasError(validation.type) && 
+		      			(userRegistrn.get('address.city').touched || userRegistrn.get('address.city').dirty)">{{validation.message}}</div>
+	    			</div>
+	    		</div>
+	    		<div class="form-group col-md-4">
+		    		<label for="state">State:</label>
+		      		<input type="text" class="form-control" formControlName="state" id="state" placeholder="enter state">
+		      		<div  *ngFor="let validation of user_validation_messages.state">
+		      			<div class="alert alert-danger"  *ngIf="userRegistrn.get('address.state').hasError(validation.type) && 
+		      			(userRegistrn.get('address.state').touched || userRegistrn.get('address.state').dirty)">{{validation.message}}</div>
+	    			</div>
+	    		</div>
+	    		<div class="form-group col-md-4">
+		    		<label for="zip">Zip Code:</label>
+		      		<input type="text" class="form-control" formControlName="zip" id="zip" placeholder="enter zip">
+		      		<div *ngFor="let validation of user_validation_messages.zip">
+		      			<div class="alert alert-danger" *ngIf="userRegistrn.get('address.zip').hasError(validation.type) && 
+		      			(userRegistrn.get('address.zip').touched || userRegistrn.get('address.zip').dirty)">{{validation.message}}</div>
+	    			</div>
+	    		</div>
+    		</div>
+    	</div>
+	</div>
+	<div class="form-row">
+		<div class="col text-center">
+			<button type="submit" class="btn btn-primary">Submit</button>
+			<!-- [disabled]="userRegistrn.invalid" -->
+		</div>
+	</div>
+</form>
+</div>
+
+<div class="row">
+<app-user-child [childAddress]=childAddress></app-user-child>
+</div>
+
+<div class="row">
+		<div class="col-md-12 text-center mt-3 mb-2"><h4>Template Driven Form </h4></div>
+</div>
+
+<div class="row text-center">
+	<form #loginForm="ngForm" (ngSubmit)="OnTemplateSubmission(loginForm.value)" >
+		<div class="col">
+			<label for="name">Full Name</label>
+	       	<input type="text" class="form-control" id="name" 
+	       	name="fullName" [(ngModel)]="fullName">
+	       	<!-- {{fullNm.value}} -->			
+		</div>
+		<div class="col col mt-2">
+			<label for="phone">Mobile</label>
+	       	<input type="text" class="form-control" id="phone" 
+	       	name="mobile" [(ngModel)]="mobile">
+	       	<!-- {{fullNm.value}} -->			
+		</div>
+		<div class="col mt-2">
+			<label for="email">Email</label>
+	       	<input type="text" class="form-control" id="email" 
+	       	name="email" [(ngModel)]="email">
+	       	<!-- {{fullNm.value}} -->			
+		</div>
+		<fieldset ngModelGroup="address" class="mt-3 mb-4">
+		  <label>Street:</label>
+		  <input type="text" name="street"  ngModel required="required">
+
+		  <label>Zip:</label>
+		  <input type="text" name="zip" ngModel>
+
+		  <label>City:</label>
+		  <input type="text" name="city" ngModel>
+		</fieldset>
+		<button type="submit" class="btn btn-success mb-4" [disabled]="!loginForm.form.valid">Submit</button>
+	</form>
+</div>

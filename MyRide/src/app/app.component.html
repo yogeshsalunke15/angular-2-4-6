@@ -1,0 +1,38 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+		<h1 i18n="@@templatesTitle">
+			welcome to India
+		</h1>	
+
+  <h2 i18n>
+    Welcome to App Component {{ title }}!
+  </h2>
+  </div>
+	
+	<div class="row mb-3">
+		<div class="col-md-12  directive">Custom Directives :</div>
+		<div class="col-md-3">
+			<button routerLink="/attributeDir" class="attribute"> Attribute Directive</button>
+		</div>
+		<div class="col-md-3 "><button routerLink="/structuralDir" class="structural"> Structural Directive</button> </div>
+	</div>
+
+	<div class="col-md-12"><router-outlet></router-outlet></div><br><br>
+	
+<br>
+  <div class="row">
+		<div class="col-md-12">----------------Lazy Laoding Routes Loaded below ------------------</div>
+			<div class="col-md-12">
+			<button routerLink="/lazyOrders">Lazy Orders</button>&nbsp;&nbsp;&nbsp;
+			<button routerLink="/lazyCustomers">lazyCustomers</button>&nbsp;&nbsp;&nbsp;
+			<button routerLink="/home">Home</button>&nbsp;&nbsp;&nbsp;
+			<button [routerLink]="['detail','15-02-1990']">Parameterised Route</button>&nbsp;&nbsp;&nbsp;
+			<button [routerLink]="['country']">Country Main Module</button>&nbsp;&nbsp;&nbsp;
+			</div>
+</div>
+
+  <app-admin></app-admin>
+
+
+
+

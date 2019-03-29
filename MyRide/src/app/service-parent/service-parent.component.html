@@ -1,0 +1,18 @@
+<div class="col-md-12">
+  service-parent works!
+  <span *ngIf="users;then showContent else noData"></span>
+  <ng-template #showContent class="yogesh">
+  		<div *ngFor="let user of users.users">
+	  		{{user.id}}
+	  		{{user.name}}
+	  		{{user.movies}}
+  		</div>
+  	
+  </ng-template>
+  <ng-template #noData>No Data Available</ng-template>
+</div>
+
+--------------------------------------
+<div class="col-md-12">
+	<app-service-child></app-service-child>
+</div>
